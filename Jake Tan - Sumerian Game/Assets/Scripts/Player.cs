@@ -25,5 +25,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         yearText.text = "Year: " + gameManager.year;  
+        if(gameManager.population > highestPop)
+        {
+            highestPop = gameManager.population;
+            highestPopText.text = " highest Population: " + highestPop;
+        }
     }
 }
