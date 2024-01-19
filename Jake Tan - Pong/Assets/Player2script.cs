@@ -8,6 +8,6 @@ public class Player2script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 tempPosition   
+        Vector2 tempPosition;   
     }
 }
