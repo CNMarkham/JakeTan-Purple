@@ -8,6 +8,9 @@ public class Player2script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 tempPosition;   
+        float x = transform.position.x;
+        float y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
+        Vector2 tempPosition = new Vector2(x, y);
+        transform.position = tempPosition;
     }
 }
