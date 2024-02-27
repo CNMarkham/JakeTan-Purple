@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Animator animator;
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        animator.SetTrigger("Death");
+        Destroy(gameObject, 1f);
+        Destroy(collision.gameObject);
+    }
+
 
     // Update is called once per frame
     void Update()

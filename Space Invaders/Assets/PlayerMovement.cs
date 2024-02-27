@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 
 {
     public int speed;
+    public GameObject bulletPrefab;
     void Update()
     {
         if (Input.GetKey(KeyCode.RightArrow))
@@ -15,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector2.left * Time.deltaTime * speed);
+          
+        }
+        if ( Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
     }
 }
