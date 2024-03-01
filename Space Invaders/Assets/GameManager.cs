@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int xOffset;
-    public int xSpace;
+    public float xOffset;
+    public float xSpace;
     public GameObject enemyPrefab;
  
     // Start is called before the first frame update
