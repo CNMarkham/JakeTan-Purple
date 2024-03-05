@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     private Animator animator;
-    static private Vector2 direction;
+    static private Vector2 direction = Vector2.left;
     void Start()
     {
         animator = GetComponent<Animator>();
