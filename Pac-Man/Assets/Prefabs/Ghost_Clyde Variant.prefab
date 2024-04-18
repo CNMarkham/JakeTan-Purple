@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7167102483770041726
+--- !u!1001 &5621303303415948171
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2533384065056078215, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 0.36561054
       objectReference: {fileID: 0}
     - target: {fileID: 2533384065056078215, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 0.57822764
       objectReference: {fileID: 0}
     - target: {fileID: 2533384065056078215, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 7251598674673419967, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_Name
-      value: Ghost_Blinky Variant
+      value: Ghost_Clyde Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8841757471358909291, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8841757471358909291, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.91
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8841757471358909291, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.008797536
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8841757471358909291, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64,8 +64,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6368838559342939794, guid: 985bbef032d47fc44a2b069ac094fdf1, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
