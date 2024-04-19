@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Movement : MonoBehaviour
 {
-    public float speed;
+    public float speed; 
     public Vector2 initialDirection;
     public LayerMask obstacleLayer;
 
@@ -14,8 +14,9 @@ public abstract class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       direction = initialDirection; 
-       // GetComponent<>
+       direction = initialDirection;
+        rb = GetComponent<Rigidbody2D>();
+        nextDirection = Vector2.zero;
     }
 
     // Update is called once per frame
@@ -23,4 +24,21 @@ public abstract class Movement : MonoBehaviour
     {
         
     }
+
+    private void FixedUpdate()
+    {
+        Vector2 position = rb.position;
+        Vector2 translation = direction * speed * Time.fixedDeltaTime;
+
+        rb.MovePosition(position + translation);
+    }
+private bool Occupied(Vector2 newDirection)
+{
+        //RaycastHit2D hit = Phsyics2D.BoxCast();
+        return true;
 }
+}
+  
+
+
+    
