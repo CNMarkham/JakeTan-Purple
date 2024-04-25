@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Pacman : Movement
 {
-
+    protected override void ChildUpdate()
+    {
+        
+    }
 }

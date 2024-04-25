@@ -22,7 +22,11 @@ public abstract class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (nextDirection != Vector2.zero)
+        {
+            SetDirection(nextDirection);
+        }
+        ChildUpdate();
     }
 
     private void FixedUpdate()
@@ -36,8 +40,24 @@ public abstract class Movement : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, newDirection, 1.5f, obstacleLayer);//raycast shoots an invisible line sensing if anything is there if true, player can continue moving
         return hit.collider != null; 
-    } 
+    }
+
+    protected void SetDirection(Vector2 newDirection)
+    {
+        if (!Occupied(newDirection))
+        {
+            direction = newDirection;
+            nextDirection = Vector2.zero;
+        }
+        else
+        {
+            nextDirection = newDirection;
+        }
+    }
+
+    abstract protected void ChildUpdate();
 }
+     
   
 
 
