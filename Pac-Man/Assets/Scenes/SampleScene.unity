@@ -3285,6 +3285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377250864}
+  - component: {fileID: 1377250865}
   m_Layer: 0
   m_Name: LeftPassage
   m_TagString: Untagged
@@ -3307,6 +3308,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1218454998}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377250865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377250863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5970c15aa29f2a646ae278be6fa5ec01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPosition: {fileID: 155844168}
 --- !u!1001 &384074355358034333
 PrefabInstance:
   m_ObjectHideFlags: 0
