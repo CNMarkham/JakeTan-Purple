@@ -556,6 +556,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1169573214 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 368636427842603531, guid: 8700bbd1b305ee54e8126f425b579a2f, type: 3}
+  m_PrefabInstance: {fileID: 3311880738320100233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1169573218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169573214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b907ac32c05eb2e41b332cd9eb1e28fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  initialDirection: {x: 0, y: -1}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  body: {fileID: 0}
+  eyes: {fileID: 0}
+  blue: {fileID: 0}
+  white: {fileID: 0}
+  atHome: 0
+  homeDuration: 0
 --- !u!1 &1195045781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,6 +3929,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1603431597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2747583663911518597, guid: 5005b21cd546d874ea0ad771d3c2fd0f, type: 3}
+  m_PrefabInstance: {fileID: 4690268930542007769}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603431601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603431597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b907ac32c05eb2e41b332cd9eb1e28fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  initialDirection: {x: 0, y: 1}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  body: {fileID: 0}
+  eyes: {fileID: 0}
+  blue: {fileID: 0}
+  white: {fileID: 0}
+  atHome: 0
+  homeDuration: 0
 --- !u!1 &2097773771
 GameObject:
   m_ObjectHideFlags: 0
@@ -5533,6 +5589,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7969601169545859704, guid: b8b81ad790131ee4289774b830542c8a, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969601169545859704, guid: b8b81ad790131ee4289774b830542c8a, type: 3}
+      propertyPath: initialDirection.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7969601169545859704, guid: b8b81ad790131ee4289774b830542c8a, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1612369477878689049, guid: b8b81ad790131ee4289774b830542c8a, type: 3}
     m_RemovedGameObjects: []
@@ -5594,7 +5662,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 368636427842603531, guid: 8700bbd1b305ee54e8126f425b579a2f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1169573218}
   m_SourcePrefab: {fileID: 100100000, guid: 8700bbd1b305ee54e8126f425b579a2f, type: 3}
 --- !u!1001 &3939238653686719367
 PrefabInstance:
@@ -5614,7 +5685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856206729061998101, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 1856206729061998101, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5647,6 +5718,18 @@ PrefabInstance:
     - target: {fileID: 1856206729061998101, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894847817159873677, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894847817159873677, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
+      propertyPath: initialDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894847817159873677, guid: 89c6ad025011bc844993fc9ab9a9f047, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5708,7 +5791,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2747583663911518597, guid: 5005b21cd546d874ea0ad771d3c2fd0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1603431601}
   m_SourcePrefab: {fileID: 100100000, guid: 5005b21cd546d874ea0ad771d3c2fd0f, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

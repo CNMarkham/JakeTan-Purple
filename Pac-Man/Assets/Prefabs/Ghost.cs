@@ -14,7 +14,12 @@ public class Ghost : Movement
 
     private void Awake()
     {
-        
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
+        frightened = false;
+        Invoke("LeaveHome", homeDuration);
     }
 
     protected override void ChildUpdate()
@@ -25,9 +30,22 @@ public class Ghost : Movement
     {
 
     }
-    private void OnTriggerEnter2D(Collider2D Collider)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        Node node = collision.GetComponent<Node>();
+        Node node = collider.GetComponent<Node>();
+        if (node != null)
+        {
+            int index = Random.Range(0, node.availableDirections.Count);
+            if (node.availableDirections[index] == -direction)
+            {
+                index += 1;
+                if (index == node.availableDirections.Count)
+                {
+                    index = 0;
+                }
+            }
+            SetDirection(node.availableDirections[index]);
+        }
     }
     private void LeaveHome()
     {
