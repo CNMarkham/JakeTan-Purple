@@ -25,10 +25,13 @@ public class Ghost : Movement
     protected override void ChildUpdate()
     {
 
-    }
+    } 
     private  void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if(atHome && collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+        {
+            SetDirection(-direction);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -49,15 +52,35 @@ public class Ghost : Movement
     }
     private void LeaveHome()
     {
+        transform.position = new Vector3(0, 2.5f, -1f);
+        direction = new Vector2(-1, 0);
+        atHome = false;
+        frightened = false;
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
+
 
     }
     public void Frighten()
     {
-
+        if (!atHome)
+        {
+            frightened = true;
+            body.SetActive(false);
+            eyes.SetActive(false);
+            blue.SetActive(true);
+            white.SetActive(false);
+            Invoke("Flash", 4f);
+        }
     }
     private void Flash()
     {
-
+        body.SetActive(false);
+        eyes.SetActive(false);
+        blue.SetActive(false);
+        white.SetActive(true);
     }
     private void Reset()
     {
