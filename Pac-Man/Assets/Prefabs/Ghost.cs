@@ -32,6 +32,17 @@ public class Ghost : Movement
         {
             SetDirection(-direction);
         }
+        if (collision.gameObject.CompareTag("Pacman"))
+        {
+            if (frightened)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -39,10 +50,10 @@ public class Ghost : Movement
         if (node != null)
         {
             int index = Random.Range(0, node.availableDirections.Count);
-            if (node.availableDirections[index] == -direction)
+            if (node.availableDirections[index] == -direction) // this is to check if the direction we picked is the one we came from
             {
                 index += 1;
-                if (index == node.availableDirections.Count)
+                if (index == node.availableDirections.Count) // this is to make sure we dont go out of range in the list
                 {
                     index = 0;
                 }
@@ -52,7 +63,7 @@ public class Ghost : Movement
     }
     private void LeaveHome()
     {
-        transform.position = new Vector3(0, 2.5f, -1f);
+        transform.position = new Vector3(0, 3f, -1f);
         direction = new Vector2(-1, 0);
         atHome = false;
         frightened = false;
@@ -81,9 +92,14 @@ public class Ghost : Movement
         eyes.SetActive(false);
         blue.SetActive(false);
         white.SetActive(true);
+        Invoke("Reset", 4f);
     }
     private void Reset()
     {
-       
+        frightened = false;
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
     }
 }
