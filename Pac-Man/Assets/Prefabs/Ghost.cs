@@ -36,11 +36,19 @@ public class Ghost : Movement
         {
             if (frightened)
             {
+                transform.position = new Vector3(0, 0.5f, 1);
+                body.SetActive(false);
+                eyes.SetActive(true);
+                blue.SetActive(false);
+                white.SetActive(false);
+                atHome = true;
+                CancelInvoke();
+                Invoke("LeaveHome", 4f);
 
             }
             else
             {
-
+                Destroy(collision.gameObject);
             }
         }
     }
