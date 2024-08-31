@@ -9,9 +9,13 @@ public class PlayerMovement : MonoBehaviour
 
     private RaycastHit2D hit;
     public float jumpForce;
+    private bool jumping;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        jumping = false;
+
 
     }
 
@@ -29,6 +33,46 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        hit - Physics2D.CircleCast(rb.position, 0.25t, Vector2.down, 0.375t, LayerMask.GetMask("Default"));
+        hit = Physics2D.CircleCast(rb.position, 0.25f, Vector2.down, 0.375f, LayerMask.GetMask("Default"));
+
+        if(hit.collider != null && Input.GetKeyDown(KeyCode.Space))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.y = jumpForce;
+            rb.velocity = velocity;
+            jumping = true;
+            Invoke("ResetJumping", 0.5f);
+        }
+        if (jumping && Input.GetKey(KeyCode.Space))
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.y = jumpForce;
+            rb.velocity = velocity;
+            
+        }
+
+
+    }
+    private void ResetJumping()
+    {
+        jumping = false;
+    }
+
+    private void FlipDirection()
+    {
+        foreach (SpriteRenderer sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.flipX = rb.velocity.x < 0;
+        }
+            
+    }
+    private void ChangeAnimations()
+    {
+        foreach (Animator animator in GetComponentsInChildren<Animator>())
+        {
+            animator.SetFloat("velocityX", rb.velocity.x);
+            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontal"));
+            animator.SetBool("inAir", hit.collider == null || jumping);
+        }
     }
 }
