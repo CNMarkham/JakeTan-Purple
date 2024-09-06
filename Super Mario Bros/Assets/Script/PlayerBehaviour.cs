@@ -67,7 +67,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private IEnumerator ChangeSize()
     {
-
+        yield return 5;
     }
 
     // Update is called once per frame
