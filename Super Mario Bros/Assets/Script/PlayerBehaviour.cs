@@ -57,18 +57,45 @@ public class PlayerBehaviour : MonoBehaviour
         GetComponent<CapsuleCollider2D>().offset = new Vector2(0, 0.5f);
 
         big = true;
+        StartCoroutine("ChangeSize");
+
 
     }
 
     private void Death()
     {
+        smallAnimator.SetTrigger("death");
 
+        GetComponent<CapsuleCollider2D>().enabled = false;
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.up * 10;
+        GetComponent<PlayerMovement>().enabled = false;
+        Destroy(gameObject, 0.5f);
     }
 
     private IEnumerator ChangeSize()
     {
-
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Vector3 velocity = rb.velocity;
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        rb.isKinematic = true;
+        rb.velocity = Vector3.zero;
+        
+        for (int i = 0; i < 8; i++)
+        {
+            bigRenderer.enabled ^= true;
+            smallRenderer.enabled ^= true;
+            yield return new WaitForSeconds(0.25f);
+            
+        }
+        rb.isKinematic = false;
+        rb.velocity = velocity;
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
+                
     }
+
 
     // Update is called once per frame
     void Update()
