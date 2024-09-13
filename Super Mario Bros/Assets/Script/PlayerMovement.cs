@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         Jump();
+        FlipDirection();
+        ChangeAnimations();
     }
 
 
