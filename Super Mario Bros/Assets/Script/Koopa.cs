@@ -54,7 +54,9 @@ public class Koopa : MonoBehaviour
 
     private void Launch()
     {
-
+        GetComponent<EnemyMovement>().speed = 15;
+        GetComponent<Rigidbody2D>().velocity = Vector3.right * 15;
+        shellMoving = true;
     }
 
 }
