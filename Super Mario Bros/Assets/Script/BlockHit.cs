@@ -17,7 +17,7 @@ public class BlockHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Hit()
@@ -26,5 +26,13 @@ public class BlockHit : MonoBehaviour
         {
             return;
         }
+        animator.SetTrigger("hit");
+        maxHits--;
+        if(maxHits == 0)
+        {
+            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.sprite = emptyBlock;
+        }
     }
+
 }
