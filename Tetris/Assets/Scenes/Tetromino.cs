@@ -10,6 +10,10 @@ public class Tetromino : MonoBehaviour
         {
             transform.position += new Vector3 (1, 0);
         }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            transform.position += new Vector3(-1, 0);
+        }
     }
 }
 
