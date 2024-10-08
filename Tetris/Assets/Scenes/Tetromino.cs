@@ -14,10 +14,18 @@ public class Tetromino : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += new Vector3(-1, 0);
+            if (!validMove())
+            {
+                transform.position += new Vector3(1, 0);
+            }
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += new Vector3(1, 0);
+            if (!validMove()) // validMove() == false
+            {
+                transform.position += new Vector3(-1, 0);
+            }
         }
         float tempTime = fallTime;
 
@@ -31,6 +39,10 @@ public class Tetromino : MonoBehaviour
         {
             transform.position += Vector3.down;
             previousTime = Time.time;
+            if (!validMove())
+            {
+                transform.position += new Vector3(0, 1);
+            }
         }
 
     }
@@ -43,10 +55,11 @@ public class Tetromino : MonoBehaviour
             int y = Mathf.RoundToInt(child.transform.position.y);
             if (x <= 0 || y <= 0 || x >= width || y >= height)
             {
-
+                return false;
             }
-            
         }
-        return false;
+
+        return true;
     }
+    
 }
