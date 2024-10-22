@@ -8,6 +8,7 @@ public class Tetromino : MonoBehaviour
     public float fallTime = 0.8f;
     public static int width = 10;
     public static int height = 20;
+    public Vector3 rotationPoint;
 
     void Update()
     {
@@ -44,6 +45,8 @@ public class Tetromino : MonoBehaviour
                 transform.position += new Vector3(0, 1);
             }
         }
+        Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
+        transform.RotateAround(convertedPoint, Vector3.forward, 90);
 
     }
 
@@ -61,5 +64,10 @@ public class Tetromino : MonoBehaviour
 
         return true;
     }
-    
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(transform.position + rotationPoint, 0.1f);
+    }
 }
