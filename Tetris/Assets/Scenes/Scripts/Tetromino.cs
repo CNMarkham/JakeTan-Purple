@@ -43,10 +43,20 @@ public class Tetromino : MonoBehaviour
             if (!validMove())
             {
                 transform.position += new Vector3(0, 1);
+                this.enabled = false;
+                FindObjectOfType<Spawner>().SpawnTetromino();
             }
         }
-        Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
-        transform.RotateAround(convertedPoint, Vector3.forward, 90);
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
+            transform.RotateAround(convertedPoint, Vector3.forward, 90);
+            if (!validMove())
+            {
+                transform.RotateAround(convertedPoint, Vector3.forward, -90);
+            }
+        }
+
 
     }
 
